@@ -133,6 +133,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 			$sql = "update task set comp = 'yes' where id = '$task[$i]';";
         		$result = $conn->query($sql);
 
+			$sql = "select description from task where id = '$task[$i]';";
+			$result = $conn->query($sql);
+			$row = $result->fetch_assoc();
+			echo "Removing: $row['description']";
+
 	    	}
 	 }
     }
