@@ -2,7 +2,7 @@
 $host = 'localhost';
 $user = 'root';
 $pass = 'monkey';
-$db = 'Used_Cars';
+$db = 'tasker';
 $conn = new mysqli($host,$user,$pass,$db);
 
 if($conn->connect_error)
