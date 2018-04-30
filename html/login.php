@@ -26,6 +26,8 @@ else
 
     if ($_POST['password'] == $userArray['pass']) 
     {   
+
+	$_SESSION['user'] = $user;
     	var_dump($user);
       	// This is how we'll know the user is logged in	
     	
