@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             <label>
                 Username<span class="req">*</span>
             </label>
-            <input type="user" required autocomplete="off" name="user"/>
+            <input type="user" required autocomplete="off" name="user"/><br>
             
             <label>
                 Password<span class="req">*</span>
