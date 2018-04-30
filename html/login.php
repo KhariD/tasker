@@ -1,22 +1,18 @@
 <?php
-echo "hello!".PHP_EOL;
 session_start();
 /* User login process, checks if user exists and password is correct */
 
 // Escape email to protect against SQL injections
 $user = $conn->escape_string($_POST['user']);
-echo "1";
 $sql = "select * from user where user = '$user';";
-echo "2";
 $result = $conn->query($sql);
-echo "3";
 
-var_dump($result);
+//var_dump($result);
 
 if ( $result->num_rows == 0 )
 { 
     // User doesn't exist
-    echo "user doesn't exist".PHP_EOL;
+    echo "<br><strong>User Doesn't Exist!!</strong><br>".PHP_EOL;
     
 }
 else 
@@ -26,7 +22,7 @@ else
     $result = $conn->query($sql);
     
     $userArray = $result->fetch_assoc();
-    echo "<br>user exists<br>";
+    echo "<br><strong>User Exists!!</strong><br>";
 
     if ($_POST['password'] == $userArray['pass']) 
     {   
