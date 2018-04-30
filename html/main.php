@@ -2,17 +2,17 @@
 /* Main page with two forms: sign up and log in */
 require 'db.php';
 session_start();
-var_dump($_POST);
+//var_dump($_POST);
 ?>
 
 <?php 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') 
 {
-    var_dump($_POST);
+    //var_dump($_POST);
     
     if (isset($_POST['login'])) 
     { //user logging in
-        var_dump($_POST);
+       //var_dump($_POST);
         require 'login.php';
     
     }
