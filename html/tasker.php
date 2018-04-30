@@ -37,7 +37,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     { 
         $desc = $conn->escape_string($_POST['description']);
         $dt = $conn->escape_string($_POST['date']);
-   }
+	$comp = "no";
+	$user = $_SESSION['user'];
+	
+
+	$sql = "insert into task (description, due, comp, user) values ('$desc', '$dt', '$comp', '$user');";
+	
+	if ($conn->query($sql) === TRUE)
+            {
+                echo "<br>:)<br>";
+            }
+            else
+            {
+                echo "<br>Error: ".$sql."<br>".$conn->error;
+            }
+
+    }
 }
 ?>
 
