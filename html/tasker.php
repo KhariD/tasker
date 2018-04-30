@@ -100,7 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         {
             echo "<tr>";
             echo "<td>" . $row['description'] . "</td>";
-            echo "<td>" . $row['date'] . "</td>";
+            echo "<td>" . $row['due'] . "</td>";
             echo "<td>" . '<input type="checkbox" id="' . $row['id'] . '" name="' . $row['id'] . '">' . "</td>";
             echo "</tr>";
         }
