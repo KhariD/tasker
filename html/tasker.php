@@ -61,7 +61,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 <body>
   <div class="show">
     <div id="show">   
-        <h1>Sales Representative Portal!</h1>
         <form action="tasker.php" method="post" autocomplete="off">
             <br>
             <label>
@@ -88,8 +87,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         echo "Showing Vehicles For Sale";
 	$sql = "select * from task where user = '$user' and comp = '$comp';";
         $result = $conn->query($sql);
-
-        echo "<table border='1'>
+	
+	echo '<form action="tasker.php" method="post">';
+        
+	echo "<table border='1'>
         <tr>
         <th>Description</th>
         <th>Due</th>
@@ -101,11 +102,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             echo "<tr>";
             echo "<td>" . $row['description'] . "</td>";
             echo "<td>" . $row['due'] . "</td>";
-            echo "<td>" . '<input type="checkbox" id="' . $row['id'] . '" name="' . $row['id'] . '">' . "</td>";
+            echo "<td>" . '<input type="checkbox" name="formTask[]" value="' . $row['id'] . '">' . "</td>";
             echo "</tr>";
         }
 
         echo "</table>";
+	
+	echo '<button class="button button-block" name="complete" />Complete Tasks</button>';
+	echo "</form>";
     }
 }
 ?>
