@@ -126,7 +126,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 	 else
 	 {
 	    	$n = count($task);
-	   	echo "You selected $n tasks(s): ");
+	   	echo "You selected $n tasks(s): ";
 	    	for($i=0; $i < $n; $i++)
 	    	{
 	      		echo($task[$i] . " ");
