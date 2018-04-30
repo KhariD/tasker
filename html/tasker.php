@@ -56,3 +56,57 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 }
 ?>
 
+<!DOCTYPE html>
+<html>
+<body>
+  <div class="show">
+    <div id="show">   
+        <h1>Sales Representative Portal!</h1>
+        <form action="tasker.php" method="post" autocomplete="off">
+            <br>
+            <label>
+                Tasks!
+            </label>
+            <br>
+            <button class="button button-block" name="update" />Update Tasks</button>
+        </form>
+    </div><!-- tab-content -->
+</body>
+</html>
+
+<?php
+if ($_SERVER['REQUEST_METHOD'] == 'POST') 
+{   
+    if (isset($_POST['veh'])) 
+    { 
+        //user logging in
+        //display vehicles
+
+	$comp = "no";
+        $user = $_SESSION['user'];
+
+        echo "Showing Vehicles For Sale";
+	$sql = "select * from task where user = '$user' and comp = '$comp';";
+        $result = $conn->query($sql);
+
+        echo "<table border='1'>
+        <tr>
+        <th>Description</th>
+        <th>Due</th>
+        <th>Finished?</th>
+        </tr>";
+
+	while($row = $result->fetch_assoc())
+        {
+            echo "<tr>";
+            echo "<td>" . $row['description'] . "</td>";
+            echo "<td>" . $row['date'] . "</td>";
+            echo "<td>" . '<input type="checkbox" id="' . $row['id'] . '" name="' . $row['id'] . '">' . "</td>";
+            echo "</tr>";
+        }
+
+        echo "</table>";
+    }
+}
+?>
+
