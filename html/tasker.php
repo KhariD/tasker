@@ -112,5 +112,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 	echo "</form>";
     }
 }
+
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') 
+{   
+    if (isset($_POST['complete'])) 
+    { 
+	 $task = $_POST['formTask'];
+	 if(empty($task))
+	 {
+	      	echo "You didn't select any tasks to remove";
+	 }
+	 else
+	 {
+	    	$n = count($task);
+	   	echo "You selected $n tasks(s): ");
+	    	for($i=0; $i < $n; $i++)
+	    	{
+	      		echo($task[$i] . " ");
+	    	}
+	 }
+    }
+}
+
 ?>
 
