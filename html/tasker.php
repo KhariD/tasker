@@ -77,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') 
 {   
-    if (isset($_POST['veh'])) 
+    if (isset($_POST['update'])) 
     { 
         //user logging in
         //display vehicles
