@@ -4,6 +4,8 @@ require 'db.php';
 echo "<br><strong>Welcome to Tasker!</strong><br>";
 session_start();
 
+$user = $_SESSION['user'];
+echo "<br>User: ".$user."<br>";
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +19,7 @@ session_start();
                 Add a Task!!
             </label>
             	<br>
-            Enter task: <input type="text" required name="description" placeholder="enter vin"/>
+            Enter task: <input type="text" required name="description" placeholder="'Do IT640 Homework'"/>
 		<br>
             Enter date: <input type="date" required name="date"/>
 		<br>
