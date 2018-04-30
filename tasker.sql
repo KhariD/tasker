@@ -27,8 +27,9 @@ CREATE TABLE `task` (
   `description` varchar(255) NOT NULL,
   `due` date DEFAULT NULL,
   `comp` varchar(255) DEFAULT 'no',
+  `user` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,6 +38,7 @@ CREATE TABLE `task` (
 
 LOCK TABLES `task` WRITE;
 /*!40000 ALTER TABLE `task` DISABLE KEYS */;
+INSERT INTO `task` VALUES (1,'Buy eggs','2018-04-30','yes','test'),(2,'Do hw','2018-05-01','yes','test'),(3,'Do IT 640 Project','2018-04-04','yes','test'),(4,'Go home','2018-04-19','no','test'),(5,'Buy flowers','2018-04-09','yes','test'),(6,'bruhh','2018-04-12','yes','test'),(7,'Get passport photo redone','2018-05-02','no','test'),(8,'Get oil changed','2018-05-03','no','test'),(9,'Take screenshots for IT640 project','2018-04-30','yes','test');
 /*!40000 ALTER TABLE `task` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -60,6 +62,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES ('test','123');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -72,4 +75,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-28 20:53:57
+-- Dump completed on 2018-04-30  5:40:29
