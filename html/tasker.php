@@ -130,6 +130,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 	    	for($i=0; $i < $n; $i++)
 	    	{
 	      		echo($task[$i] . " ");
+			$sql = "update task set comp = 'yes' where id = '$task[$i]';";
+        		$result = $conn->query($sql);
+
 	    	}
 	 }
     }
